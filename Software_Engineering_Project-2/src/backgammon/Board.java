@@ -41,6 +41,45 @@ public class Board
 		return returnValue;
 	}
 	
+	public void initialiseBoard()
+	{
+		for ( int i = 0; i < 24; i++ )
+		{
+			
+			switch ( i )
+			{
+				case 1:
+					playingBoard[i] = 2;
+					break;
+				case 5:
+					playingBoard[i] = -5;
+					break;
+				case 9:
+					playingBoard[i] = -3;
+				case 11:
+					playingBoard[i] = 5;
+					break;
+				case 12:
+					playingBoard[i] = -5;
+					break;
+				case 16:
+					playingBoard[i] = 3;
+					break;
+				case 18:
+					playingBoard[i] = 5;
+					break;
+				case 23:
+					playingBoard[i] = -2;
+					break;
+				default:
+					playingBoard[i] = 0;
+					//break;
+					
+			}
+			
+		}
+	}
+	
 	/**
 	 * self-explanatory method
 	 */
@@ -114,6 +153,8 @@ public class Board
 	{
 		
 		Board b = new Board ();
-		System.out.print ( b.rollDice () );
+		b.initialiseBoard ();
+		b.printBoard ();
+		
 	}
 }
